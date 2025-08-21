@@ -7,8 +7,18 @@
 
 import Foundation
 
+/*
 let appName = "DevKit"
 var version = "0.0.1"
+let creationYear: Int = 2025
 
-print("Welcome to \(appName) version \(version)!")
+print("\(appName), version: \(version) (created in \(creationYear))")
+*/
 
+let plannedFeature: [String] = [
+    "Snippet Manager",
+    "Task Manager",
+    "Project Initializer"
+]
+
+print (plannedFeature[1])
