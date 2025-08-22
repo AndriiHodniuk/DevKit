@@ -40,3 +40,15 @@ if let authorName = projectDetails["author"] {
 
 let license = projectDetails["license"] ?? "MIT License"
 print (license)
+
+var plannedFeatureCount: Int = plannedFeature.count
+
+if (plannedFeatureCount > 0) {
+    print ("We have \(plannedFeatureCount) features planned.")
+} else {
+    print ("No features planned yet.")
+}
+
+for feature in plannedFeature {
+    print ("- \(feature)")
+}
