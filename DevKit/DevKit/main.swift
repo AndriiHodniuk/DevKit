@@ -67,20 +67,25 @@ if let appName = projectDetails["name"], let appVersion = projectDetails["versio
 
 
 protocol Identifiable {
-    var id: String { get }
+    var id: UUID { get }
 }
  
 struct Snippet: Identifiable {
-    let id: String
-    
+    var id: UUID
     var name: String
     var code: String
     
+    init(name: String, code: String) {
+        self.id = UUID()
+        self.name = name
+        self.code = code
+    }
+    
     func getDescripton() -> String {
-        return " - Snippet: \(name)\n - Code: \(code)"
+        return " - Snippet: \(name)\n - Code: \(code)\n - ID: \(id)"
     }
 }
 
-let firstSnippet = Snippet(id: "123456789", name: "Welcome Message Snippet", code: "func showWelcomeMessage() {print(\"Welcome!\")}")
+let firstSnippet = Snippet(name: "Welcome Message Snippet", code: "func showWelcomeMessage() {print(\"Welcome!\")}")
 
-print (firstSnippet)
+print (firstSnippet.getDescripton())
