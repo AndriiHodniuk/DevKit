@@ -65,7 +65,19 @@ if let appName = projectDetails["name"], let appVersion = projectDetails["versio
     print ("Project name or version not found.")
 }
 
+struct Snippet {
+    var name: String
+    var code: String
+    
+    func getDescripton() -> String {
+        return " - Snippet: \(name)\n - Code: \(code)"
+    }
+}
 
+let firstSnippet = Snippet(name: "Welcome Message Snippet", code: "func showWelcomeMessage() {print(\"Welcome!\")}")
+
+print (firstSnippet.name)
+print (firstSnippet.getDescripton())
 
 
 
