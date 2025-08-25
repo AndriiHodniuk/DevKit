@@ -79,8 +79,27 @@ let firstSnippet = Snippet(name: "Welcome Message Snippet", code: "func showWelc
 print (firstSnippet.name)
 print (firstSnippet.getDescripton())
 
+// --- Example with structure (COPY) ---
+struct PointStruct {
+    var x: Int
+}
+
+var structPoint1 = PointStruct(x: 10)
+var structPoint2 = structPoint1
+
+structPoint2.x = 20
+
+print("Struct 1: \(structPoint1.x), Struct 2: \(structPoint2.x)")
 
 
+// --- Example with class (LINK) ---
+class PointClass {
+    var x: Int
+    init(x: Int) { self.x = x }
+}
 
+var classPoint1 = PointClass(x: 10)
+var classPoint2 = classPoint1
+classPoint2.x = 20
 
-
+print("Class 1: \(classPoint1.x), Class 2: \(classPoint2.x)")
