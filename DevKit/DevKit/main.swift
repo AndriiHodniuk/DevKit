@@ -89,3 +89,15 @@ struct Snippet: Identifiable {
 let firstSnippet = Snippet(name: "Welcome Message Snippet", code: "func showWelcomeMessage() {print(\"Welcome!\")}")
 
 print (firstSnippet.getDescripton())
+
+let specialCharacters = ["{", "}", "(", ")", ";", "="]
+
+extension String {
+    func isCodeLike() -> Bool {
+        return specialCharacters.contains{
+            self.contains($0)
+        }
+    }
+}
+
+print (firstSnippet.code.isCodeLike())
